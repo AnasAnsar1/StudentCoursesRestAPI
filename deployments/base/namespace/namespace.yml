@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: dev
   labels:
-      env: dev
+    env: dev
