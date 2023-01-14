@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: SRA-svc
+  labels:
+    version: dev
+  namespace: dev
+spec:
+  type: LoadBalancer
+  ports:
+    - name: SRA-port
+      targetPort: 8080
+      port: 32000
+  selector:
+    app: SRA
