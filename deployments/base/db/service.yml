@@ -1,0 +1,16 @@
+apiVeriosn: v1
+kind: service
+metadata:
+  name: db-svc
+  labels:
+    version: dev
+  namespace: dev
+spec:
+  type: ClusterIP
+  ports:
+    - name: db-port
+      targetPort: 3306
+      port: 32100
+      protocol: TCP
+  selector:
+    db: std-db

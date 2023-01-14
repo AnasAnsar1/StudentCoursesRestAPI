@@ -1,0 +1,15 @@
+resources:
+- ../../base
+namespace: qa
+namePrefix: qa-
+images:
+  - name: anasansarii/SRA
+    newName: anasansarii/SRA
+    newTag: qa-latest
+labels:
+  - pairs:
+      version: qa
+    includeTemplates: true
+replicas:
+- name: SRA
+  count: 3
