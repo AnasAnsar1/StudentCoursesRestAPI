@@ -7,7 +7,7 @@ namePrefix: dev-
 images:
   - name: anasansarii/scra
     newName: anasansarii/scra
-    newTag: dev-latest
+    newTag: latest
 labels:
   - pairs:
       version: dev
