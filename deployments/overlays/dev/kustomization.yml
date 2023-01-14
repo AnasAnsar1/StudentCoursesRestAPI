@@ -1,0 +1,15 @@
+resources:
+- ../../base
+namespace: dev
+namePrefix: dev-
+images:
+  - name: anasansarii/SRA
+    newName: anasansarii/SRA
+    newTag: dev-latest
+labels:
+  - pairs:
+      version: dev
+    includeTemplates: true
+replicas:
+- name: SRA
+  count: 5

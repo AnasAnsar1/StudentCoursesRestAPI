@@ -1,0 +1,14 @@
+resources:
+- ../../base
+namespace: prod
+images:
+  - name: anasansarii/SRA
+    newName: anasansarii/SRA
+    newTag: prod-latest
+labels:
+  - pairs:
+      version: v1
+    includeTemplates: true
+replicas:
+- name: SRA
+  count: 4
