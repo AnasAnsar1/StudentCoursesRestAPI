@@ -3,8 +3,8 @@ resources:
 namespace: dev
 namePrefix: dev-
 images:
-  - name: anasansarii/SRA
-    newName: anasansarii/SRA
+  - name: anasansarii/SCRA
+    newName: anasansarii/SCRA
     newTag: dev-latest
 labels:
   - pairs:

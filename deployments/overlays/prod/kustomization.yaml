@@ -2,8 +2,8 @@ resources:
 - ../../base
 namespace: prod
 images:
-  - name: anasansarii/SRA
-    newName: anasansarii/SRA
+  - name: anasansarii/SCRA
+    newName: anasansarii/SCRA
     newTag: prod-latest
 labels:
   - pairs:
