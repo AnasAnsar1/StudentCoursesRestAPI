@@ -17,7 +17,7 @@ pipeline {
         stage('deployment') {
             agent { label 'k8s' }
             steps {
-                sh "cd deployments/overlays/$env.BRANCH_NAME/ && kustomize edit set image anasansarii/scra=anasansarii/SCRA:$env.BRANCH_NAME-$env.BUILD_ID"
+                sh "cd deployments/overlays/$env.BRANCH_NAME/ && kustomize edit set image anasansarii/scra=anasansarii/scra:$env.BRANCH_NAME-$env.BUILD_ID"
                 sh "kubectl apply -k deployments/overlays/$env.BRANCH_NAME/"
             }
         }
