@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: sra
-          image: anasansarii/scra:v1dev
+          image: anasansarii/scra
           ports:
             - name: sraport
               containerPort: 8080
