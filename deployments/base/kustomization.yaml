@@ -1,5 +1,5 @@
 resources:
-  - . namesapce.yml
+  - namesapce.yml
   - ./db/Pod.yml
   - ./db/service.yml
   - ./SRA/deployment.yml
