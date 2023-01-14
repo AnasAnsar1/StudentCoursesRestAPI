@@ -30,7 +30,7 @@ spec:
         - name: sra
           image: anasansarii/scra:v1dev
           ports:
-            - name: sraPort
+            - name: sraport
               containerPort: 8080
               protocol: TCP
           env:
