@@ -3,13 +3,13 @@ resources:
 namespace: qa
 namePrefix: qa-
 images:
-  - name: anasansarii/SCRA
-    newName: anasansarii/SCRA
+  - name: anasansarii/scra
+    newName: anasansarii/scra
     newTag: qa-latest
 labels:
   - pairs:
       version: qa
     includeTemplates: true
 replicas:
-- name: SRA
+- name: sra
   count: 3

@@ -3,13 +3,13 @@ resources:
 namespace: uat
 namePrefix: uat-
 images:
-  - name: anasansarii/SCRA
-    newName: anasansarii/SCRA
+  - name: anasansarii/scra
+    newName: anasansarii/scra
     newTag: uat-latest
 labels:
   - pairs:
       version: uat
     includeTemplates: true
 replicas:
-- name: SRA
+- name: sra
   count: 4

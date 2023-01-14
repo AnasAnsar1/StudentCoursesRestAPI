@@ -2,13 +2,13 @@ resources:
 - ../../base
 namespace: prod
 images:
-  - name: anasansarii/SCRA
-    newName: anasansarii/SCRA
+  - name: anasansarii/scra
+    newName: anasansarii/scra
     newTag: prod-latest
 labels:
   - pairs:
       version: v1
     includeTemplates: true
 replicas:
-- name: SRA
+- name: sra
   count: 4

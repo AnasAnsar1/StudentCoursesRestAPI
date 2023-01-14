@@ -3,13 +3,13 @@ resources:
 namespace: dev
 namePrefix: dev-
 images:
-  - name: anasansarii/SCRA
-    newName: anasansarii/SCRA
+  - name: anasansarii/scra
+    newName: anasansarii/scra
     newTag: dev-latest
 labels:
   - pairs:
       version: dev
     includeTemplates: true
 replicas:
-- name: SRA
+- name: sra
   count: 5
