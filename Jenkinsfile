@@ -10,14 +10,14 @@ pipeline {
         stage('Image_build_&_push') {
             agent { label 'Docker' }
             steps {
-                sh "docker image build -t anasansarii/SCRA:$env.BRANCH_NAME-$env.BUILD_ID"
-                sh "docker image push anasansarii/SCRA:$env.BRANCH_NAME-$env.BUILD_ID"
+                sh "docker image build -t anasansarii/scra:$env.BRANCH_NAME-$env.BUILD_ID"
+                sh "docker image push anasansarii/scra:$env.BRANCH_NAME-$env.BUILD_ID"
             }
         }
         stage('deployment') {
             agent { label 'k8s' }
             steps {
-                sh "cd deployments/overlays/$env.BRANCH_NAME/ && kustomize edit set image anasansarii/SCRA=anasansarii/SCRA:$env.BRANCH_NAME-$env.BUILD_ID"
+                sh "cd deployments/overlays/$env.BRANCH_NAME/ && kustomize edit set image anasansarii/scra=anasansarii/SCRA:$env.BRANCH_NAME-$env.BUILD_ID"
                 sh "kubectl apply -k deployments/overlays/$env.BRANCH_NAME/"
             }
         }
