@@ -36,6 +36,12 @@ spec:
           env:
             - name: MYSQL_SERVER
               value: db-svc
+          livenessProbe:
+            httpGet:
+              port: 32000
+          readinessProbe:
+            httpGet:
+              port: 32000
           resources:
             limits:
               memory: "128Mi"
