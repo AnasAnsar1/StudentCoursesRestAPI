@@ -1,0 +1,15 @@
+resources:
+- ../../base
+namespace: uat
+namePrefix: uat-
+images:
+  - name: anasansarii/SRA
+    newName: anasansarii/SRA
+    newTag: uat-latest
+labels:
+  - pairs:
+      version: uat
+    includeTemplates: true
+replicas:
+- name: SRA
+  count: 4
