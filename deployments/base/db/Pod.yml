@@ -41,7 +41,7 @@ spec:
           value: lessvaas
       ports:
         - name: db-port
-          port: 3306
+          containerPort: 3306
           protocol: TCP
       volumeMounts:
         - name: std-db-vol
