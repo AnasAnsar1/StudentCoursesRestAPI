@@ -1,10 +1,10 @@
 pipeline {
     agent any
-    triggers { cron('* * * * *') }
+    triggers { cron('0 23 15  * SAT') }
     stages {
         stage('vcs') {
             steps {
-                git branch: 'dev', url: 'https://github.com/AnasAnsar1/StudentCoursesRestAPI.git'
+                git branch: 'uat', url: 'https://github.com/AnasAnsar1/StudentCoursesRestAPI.git'
                 stash: 'SCRA'
             }
         }
