@@ -1,5 +1,5 @@
 resources:
-  - namespace.yml
+  - ./namespace/namespace.yml
   - ./db/Pod.yml
   - ./db/service.yml
   - ./SRA/deployment.yml
