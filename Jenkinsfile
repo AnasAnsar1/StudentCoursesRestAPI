@@ -10,7 +10,7 @@ pipeline {
         stage('Image_build_&_push') {
             agent { label 'Docker' }
             steps {
-                sh "docker image build -t anasansarii/scra:$env.BRANCH_NAME-$env.BUILD_ID"
+                sh "docker image build -t anasansarii/scra:$env.BRANCH_NAME-$env.BUILD_ID ."
                 sh "docker image push anasansarii/scra:$env.BRANCH_NAME-$env.BUILD_ID"
             }
         }
