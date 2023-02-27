@@ -1,47 +1,42 @@
 ---
 version: "3.9"
 services:
-  student-srv:
-    build: 
-      context: .
-    networks:
-      - students-net-qa
-      - students-private-net-qa
+  scra:
+    image: scra:1.0
+    environment:
+      - MYSQL_SERVER=db
     ports:
       - target: 8080
-        published: 8090
+        published: 80
         protocol: tcp
         mode: host
-    environment:
-      - MYSQL_SERVER=students-db
-    depends_on:
-      - students-db
-  students-db:
-    image: mysql:5.6
     networks:
-      - students-private-net-qa
+      - scra_net
+      - db_private
+  db:
+    image: mysql:5.6
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=test
-      - MYSQL_USER=directdevops
-      - MYSQL_PASSWORD=directdevops
+      - MYSQL_USER=devops
+      - MYSQL_PASSWORD=devops
+    networks:
+      - db_private
     volumes:
-      - type: volume
-        source: students-db-qa
-        target: /var/lib/mysql
-
-volumes:
-  students-db-qa:
+      - db_volume:/var/lib/mysql
+    depends_on:
+      - scra
 
 networks:
-  students-net-qa:
+  scra_net:
     driver: bridge
     ipam:
       config:
         - subnet: 192.168.101.0/24
-  students-private-net-qa:
+  db_private:
     driver: bridge
     ipam:
       config:
-        - subnet: 192.168.102.0/24
-        
+        - subnet: 10.0.0.5/16
+volumes:
+  db_volume:
