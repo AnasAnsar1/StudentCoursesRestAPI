@@ -34,12 +34,12 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 192.168.1.0/16
+        - subnet: 10.0.0.1/16
   db_private:
     driver: bridge
     ipam:
       config:
-        - subnet: 192.168.0.10/24
+        - subnet: 10.0.0.5/16
 volumes:
   db_volume:
     driver: volume
