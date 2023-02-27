@@ -14,7 +14,7 @@ services:
         mode: ingress
     networks:
       - db_private
-      - db_private
+      - scra_net
   db:
     image: mysql:5.6
     environment:
