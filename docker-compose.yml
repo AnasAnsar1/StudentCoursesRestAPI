@@ -42,5 +42,4 @@ networks:
         - subnet: 10.0.0.5/16
 volumes:
   db_volume:
-    driver: volume
 
