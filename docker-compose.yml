@@ -9,7 +9,7 @@ services:
       - MYSQL_SERVER=db_volume
     ports:
       - target: 8080
-        published: 8080
+        published: 80
         protocol: tcp
         mode: host
     networks:
@@ -34,7 +34,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.0.0.20/16
+        - subnet: 192.168.101.0/24
   db_private:
     driver: bridge
     ipam:
