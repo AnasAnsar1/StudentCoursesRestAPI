@@ -6,7 +6,7 @@ services:
     build:
       context: .
     environment:
-      - MYSQL_SERVER=db_private
+      - MYSQL_SERVER=db_volume
     ports:
       - target: 8080
         published: 8080
